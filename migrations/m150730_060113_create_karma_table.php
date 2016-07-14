@@ -1,6 +1,8 @@
 <?php
 
-class m150730_060113_create_karma_table extends EDbMigration
+use humhub\components\Migration;
+
+class m150730_060113_create_karma_table extends Migration
 {
 	public function up()
 	{

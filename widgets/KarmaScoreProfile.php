@@ -1,4 +1,11 @@
 <?php
+
+namespace humhub\modules\karma\widgets;
+
+use Yii;
+use humhub\modules\user\models\User;
+use humhub\models\Setting;
+
 /**
  * KarmaScoreProfile. 
  * Displays karma score on profile
@@ -7,7 +14,7 @@
  * @since 0.5
  * @author Luke
  */
-class KarmaScoreProfile extends HWidget
+class KarmaScoreProfile extends \yii\base\Widget
 {
 
     /**
@@ -23,7 +30,7 @@ class KarmaScoreProfile extends HWidget
      */
     public function run()
     {
-        $this->render('karmaScoreProfile', array('user' => $this->user));
+        return $this->render('karmaScoreProfile', array('user' => $this->user));
     }
     
 }
