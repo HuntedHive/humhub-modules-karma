@@ -6,12 +6,14 @@ class m150730_060113_create_karma_table extends Migration
 {
 	public function up()
 	{
-        $this->createTable('karma', array(
-            'id' => 'pk',
-            'name' => 'varchar(100) NOT NULL',
-            'points' => 'int(11) NOT NULL',
-            'description' => 'TEXT',
-        ), '');
+		if(!\Yii::$app->db->schema->getTableSchema("karma")) {
+			$this->createTable('karma', array(
+				'id' => 'pk',
+				'name' => 'varchar(100) NOT NULL',
+				'points' => 'int(11) NOT NULL',
+				'description' => 'TEXT',
+			), '');
+		}
 	}
 
 	public function down()
